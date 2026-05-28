@@ -1,0 +1,36 @@
+# InputStream
+  Stream Size:
+      Null.                              [single][error]
+      Empty.                      [single][property emptystream]
+      Not Empty.
+
+  Stream behavior during read:
+      Normal read.
+      IOException.           [single][error]
+
+# Encoding
+  Encoding value:
+      Null.                              [single][error]
+      Valid encoding.
+      Unsupported encoding.              [single][error]
+
+# Buffer Size
+  Buffer size value:
+      Zero.                              [single][error]
+      Negative.                          [single][error]
+      One.                               [single]
+      Smaller than content.              [if !emptystream]
+      Equal to content size.             [if !emptystream]
+      Larger than content size.          [if !emptystream]
+
+# Content Characteristics
+  Content length relative to buffer:
+      Fits in initial buffer.            [single][if !emptystream]
+      Requires one resize.               [if !emptystream]
+      Requires multiple resizes.         [single][if !emptystream]
+
+
+# Output
+  Resulting string:
+      Empty string.                      [single][if emptystream]
+      Correctly decoded text.            [if !emptystream]
