@@ -32,40 +32,29 @@ Test Case 8  		<single>
 
 
 Test Case 9  		<single>
-   Content length relative to buffer :  Fits in initial buffer
+   Buffer size value :  Larger than content size
 
 
 Test Case 10 		<single>
-   Content length relative to buffer :  Requires multiple resizes
+   Content length relative to buffer :  Fits in initial buffer
 
 
 Test Case 11 		<single>
-   Resulting string :  Empty string
+   Content length relative to buffer :  Requires multiple resizes
 
 
-Test Case 12 		(Key = 3.1.2.4.2.2.)
+Test Case 12 		(Key = 3.1.2.4.2.)
    Stream Size                       :  Not Empty
    Stream behavior during read       :  Normal read
    Encoding value                    :  Valid encoding
    Buffer size value                 :  Smaller than content
    Content length relative to buffer :  Requires one resize
-   Resulting string                  :  Correctly decoded text
 
 
-Test Case 13 		(Key = 3.1.2.5.2.2.)
+Test Case 13 		(Key = 3.1.2.5.2.)
    Stream Size                       :  Not Empty
    Stream behavior during read       :  Normal read
    Encoding value                    :  Valid encoding
    Buffer size value                 :  Equal to content size
    Content length relative to buffer :  Requires one resize
-   Resulting string                  :  Correctly decoded text
-
-
-Test Case 14 		(Key = 3.1.2.6.2.2.)
-   Stream Size                       :  Not Empty
-   Stream behavior during read       :  Normal read
-   Encoding value                    :  Valid encoding
-   Buffer size value                 :  Larger than content size
-   Content length relative to buffer :  Requires one resize
-   Resulting string                  :  Correctly decoded text
 

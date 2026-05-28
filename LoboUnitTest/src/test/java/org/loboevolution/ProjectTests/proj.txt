@@ -15,22 +15,15 @@
       Unsupported encoding.              [single][error]
 
 # Buffer Size
-  Buffer size value:
-      Zero.                              [single][error]
-      Negative.                          [single][error]
-      One.                               [single]
-      Smaller than content.              [if !emptystream]
-      Equal to content size.             [if !emptystream]
-      Larger than content size.          [if !emptystream]
+Buffer size value:
+    Zero.                              [single][error]
+    Negative.                          [single][error]
+    One.                               [single]
+    Smaller than content.              [if !emptystream][property smallerbuffer]
+    Equal to content size.             [if !emptystream][property equalbuffer]
+    Larger than content size.          [single][if !emptystream][property largerbuffer]
 
-# Content Characteristics
-  Content length relative to buffer:
-      Fits in initial buffer.            [single][if !emptystream]
-      Requires one resize.               [if !emptystream]
-      Requires multiple resizes.         [single][if !emptystream]
-
-
-# Output
-  Resulting string:
-      Empty string.                      [single][if emptystream]
-      Correctly decoded text.            [if !emptystream]
+Content length relative to buffer:
+    Fits in initial buffer.            [single][if largerbuffer]
+    Requires one resize.               [if smallerbuffer || equalbuffer]
+    Requires multiple resizes.         [single][if smallerbuffer]
