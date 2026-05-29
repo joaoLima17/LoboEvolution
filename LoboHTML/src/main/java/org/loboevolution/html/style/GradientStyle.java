@@ -269,7 +269,7 @@ public class GradientStyle {
         }
     }
 
-    private static int countColorsInGradient(char[] charArray) {
+    public static int countColorsInGradient(char[] charArray) {
         int colorCount = 0;
         boolean inColor = false;
 

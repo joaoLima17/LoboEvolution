@@ -323,10 +323,8 @@ public class FontValues extends HtmlValues {
 	 */
 	public static Integer getFontSuperScript(final String verticalAlign, final RenderState parentRenderState, final boolean isSuperscript, final boolean isSubscript) {
 		Integer superscript = null;
-
 		final boolean isSuper = "super".equalsIgnoreCase(verticalAlign);
 		final boolean isSub = "sub".equalsIgnoreCase(verticalAlign);
-
 		if (isSuper || isSuperscript) {
 			superscript = TextAttribute.SUPERSCRIPT_SUPER;
 		} else if (isSub || isSubscript) {
