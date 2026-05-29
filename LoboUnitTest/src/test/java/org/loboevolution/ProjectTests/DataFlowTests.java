@@ -15,7 +15,7 @@ public class DataFlowTests {
 
     @Test
     public void AllDefsTest2() {
-        Integer num = FontValues.getFontSuperScript("super", new MockRenderState(), true, false);
+        Integer num = FontValues.getFontSuperScript("super", null, true, false);
         assertEquals(1, num);
     }
 
